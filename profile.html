@@ -89,6 +89,9 @@
                 <button class="tab-button" data-tab="past">Past Events</button>
                 <button class="tab-button" data-tab="hosted">Hosted Events</button>
                 <button class="tab-button" data-tab="favorites">Favorites</button>
+                <button class="tab-button" data-tab="preferences">Wine Preferences</button>
+                <button class="tab-button" data-tab="tasting-notes">Tasting Notes</button>
+                <button class="tab-button" data-tab="reviews">My Reviews</button>
             </div>
 
             <!-- Upcoming Events Tab -->
@@ -278,6 +281,161 @@
                         <p>Napa Valley, USA</p>
                         <div class="favorite-actions">
                             <button class="btn btn-secondary btn-small">Find Events</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Wine Preferences Tab -->
+            <div class="tab-content" id="preferences">
+                <h2>Wine Preferences</h2>
+                <div class="preferences-container">
+                    <div class="preference-section">
+                        <h3>Favorite Wine Types</h3>
+                        <div class="preference-tags">
+                            <span class="preference-tag active">Red Wine</span>
+                            <span class="preference-tag">White Wine</span>
+                            <span class="preference-tag">Sparkling</span>
+                            <span class="preference-tag">Rosé</span>
+                        </div>
+                    </div>
+                    <div class="preference-section">
+                        <h3>Preferred Regions</h3>
+                        <div class="preference-tags">
+                            <span class="preference-tag active">Bordeaux</span>
+                            <span class="preference-tag active">Burgundy</span>
+                            <span class="preference-tag">Napa Valley</span>
+                            <span class="preference-tag">Tuscany</span>
+                        </div>
+                    </div>
+                    <div class="preference-section">
+                        <h3>Price Range</h3>
+                        <div class="price-range-slider">
+                            <input type="range" min="20" max="500" value="100" class="slider" id="priceRange">
+                            <div class="price-labels">
+                                <span>€20</span>
+                                <span id="currentPrice">€100</span>
+                                <span>€500+</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="preference-section">
+                        <h3>Wine Experience Level</h3>
+                        <div class="experience-level">
+                            <span class="level-badge intermediate">Intermediate</span>
+                            <p>You know what you like and enjoy exploring new wines</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tasting Notes Tab -->
+            <div class="tab-content" id="tasting-notes">
+                <h2>My Tasting Notes</h2>
+                <div class="tasting-notes-container">
+                    <div class="add-note-section">
+                        <button class="btn btn-primary" id="addTastingNoteBtn">
+                            <i class="fas fa-plus"></i> Add Tasting Note
+                        </button>
+                    </div>
+                    <div class="tasting-notes-list">
+                        <div class="tasting-note">
+                            <div class="note-header">
+                                <h3>Château Margaux 2015</h3>
+                                <span class="note-date">Dec 10, 2024</span>
+                            </div>
+                            <div class="note-rating">
+                                <div class="stars">★★★★★</div>
+                                <span>5.0/5</span>
+                            </div>
+                            <div class="note-content">
+                                <p><strong>Appearance:</strong> Deep ruby red with purple tints, excellent clarity</p>
+                                <p><strong>Nose:</strong> Intense aromas of blackcurrant, violet, and cedar with hints of tobacco</p>
+                                <p><strong>Palate:</strong> Full-bodied with silky tannins, complex layers of dark fruit and spice</p>
+                                <p><strong>Finish:</strong> Long, elegant finish with remarkable persistence</p>
+                                <p><strong>Overall:</strong> An exceptional wine that showcases the perfect terroir of Margaux. The balance between power and elegance is remarkable.</p>
+                            </div>
+                            <div class="note-actions">
+                                <button class="btn btn-secondary btn-small">Edit</button>
+                                <button class="btn btn-secondary btn-small">Share</button>
+                            </div>
+                        </div>
+                        <div class="tasting-note">
+                            <div class="note-header">
+                                <h3>Dom Pérignon 2013</h3>
+                                <span class="note-date">Dec 5, 2024</span>
+                            </div>
+                            <div class="note-rating">
+                                <div class="stars">★★★★☆</div>
+                                <span>4.5/5</span>
+                            </div>
+                            <div class="note-content">
+                                <p><strong>Appearance:</strong> Pale gold with fine, persistent bubbles</p>
+                                <p><strong>Nose:</strong> Fresh citrus and white flowers with subtle brioche notes</p>
+                                <p><strong>Palate:</strong> Crisp and refreshing with excellent acidity and minerality</p>
+                                <p><strong>Finish:</strong> Clean, elegant finish with lingering citrus notes</p>
+                            </div>
+                            <div class="note-actions">
+                                <button class="btn btn-secondary btn-small">Edit</button>
+                                <button class="btn btn-secondary btn-small">Share</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Reviews Tab -->
+            <div class="tab-content" id="reviews">
+                <h2>My Wine Reviews</h2>
+                <div class="reviews-container">
+                    <div class="reviews-summary">
+                        <div class="summary-stat">
+                            <span class="stat-number">24</span>
+                            <span class="stat-label">Reviews Written</span>
+                        </div>
+                        <div class="summary-stat">
+                            <span class="stat-number">4.7</span>
+                            <span class="stat-label">Average Rating</span>
+                        </div>
+                        <div class="summary-stat">
+                            <span class="stat-number">156</span>
+                            <span class="stat-label">Helpful Votes</span>
+                        </div>
+                    </div>
+                    <div class="reviews-list">
+                        <div class="review-item">
+                            <div class="review-wine">
+                                <h3>Château Margaux 2015</h3>
+                                <p class="wine-region">Margaux, Bordeaux, France</p>
+                            </div>
+                            <div class="review-rating">
+                                <div class="stars">★★★★★</div>
+                                <span>5.0/5</span>
+                            </div>
+                            <div class="review-content">
+                                <p>Absolutely stunning wine! The 2015 vintage is everything you'd expect from a First Growth. Perfect balance of power and elegance with incredible aging potential.</p>
+                            </div>
+                            <div class="review-meta">
+                                <span class="review-date">Dec 10, 2024</span>
+                                <span class="helpful-votes">12 helpful votes</span>
+                            </div>
+                        </div>
+                        <div class="review-item">
+                            <div class="review-wine">
+                                <h3>Dom Pérignon 2013</h3>
+                                <p class="wine-region">Champagne, France</p>
+                            </div>
+                            <div class="review-rating">
+                                <div class="stars">★★★★☆</div>
+                                <span>4.5/5</span>
+                            </div>
+                            <div class="review-content">
+                                <p>Excellent champagne with great finesse. The 2013 vintage shows beautiful freshness and complexity. Perfect for special occasions.</p>
+                            </div>
+                            <div class="review-meta">
+                                <span class="review-date">Dec 5, 2024</span>
+                                <span class="helpful-votes">8 helpful votes</span>
+                            </div>
                         </div>
                     </div>
                 </div>

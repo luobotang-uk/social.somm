@@ -10,6 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="wine-database.js"></script>
 </head>
 <body>
     <!-- Navigation -->
@@ -82,7 +83,7 @@
     <!-- Events Grid -->
     <section class="events-grid-section">
         <div class="container">
-            <div class="events-grid">
+            <div class="events-grid" id="eventsGrid">
                 <!-- Event Card 1 -->
                 <div class="event-card">
                     <div class="event-image">
@@ -297,5 +298,98 @@
     </footer>
 
     <script src="script.js"></script>
+    <script>
+        // Load wine events dynamically
+        document.addEventListener('DOMContentLoaded', function() {
+            loadWineEvents();
+        });
+
+        function loadWineEvents() {
+            const eventsGrid = document.getElementById('eventsGrid');
+            if (!eventsGrid) return;
+
+            const wines = WineDatabase.getFeaturedWines();
+            const events = wines.map((wine, index) => createEventCard(wine, index));
+            
+            eventsGrid.innerHTML = events.join('');
+        }
+
+        function createEventCard(wine, index) {
+            const eventTypes = ['home', 'away', 'home'];
+            const locations = ['Amsterdam, NL', 'Wine Bar Amsterdam', 'Utrecht, NL'];
+            const dates = ['Dec 15, 2024', 'Dec 20, 2024', 'Dec 28, 2024'];
+            const times = ['7:00 PM', '8:00 PM', '6:30 PM'];
+            const spotsFilled = [3, 2, 4];
+            const totalSpots = 5;
+            const prices = [40, 35, 30];
+
+            const eventType = eventTypes[index % eventTypes.length];
+            const location = locations[index % locations.length];
+            const date = dates[index % dates.length];
+            const time = times[index % times.length];
+            const filled = spotsFilled[index % spotsFilled.length];
+            const price = prices[index % prices.length];
+
+            const fractionBars = Array.from({length: totalSpots}, (_, i) => 
+                `<div class="fraction ${i < filled ? 'filled' : ''}"></div>`
+            ).join('');
+
+            return `
+                <div class="event-card" data-wine-id="${wine.id}">
+                    <div class="event-image">
+                        <div class="wine-bottle-icon">
+                            <img src="logo1.png" alt="Wine Bottle" class="bottle-logo">
+                        </div>
+                        <div class="event-type ${eventType}">${eventType.charAt(0).toUpperCase() + eventType.slice(1)}</div>
+                    </div>
+                    <div class="event-content">
+                        <h3>${wine.name}</h3>
+                        <p class="wine-details">${wine.region} • ${wine.type}</p>
+                        <div class="wine-rating">
+                            <div class="stars">${'★'.repeat(Math.floor(wine.ratings.average / 20))}</div>
+                            <span>${wine.ratings.average}/100</span>
+                        </div>
+                        <div class="wine-price-info">
+                            <span class="market-price">€${wine.priceRange.min} - €${wine.priceRange.max}</span>
+                            <span class="price-source">Market Price</span>
+                        </div>
+                        <div class="event-info">
+                            <div class="info-item">
+                                <i class="fas fa-calendar"></i>
+                                <span>${date}</span>
+                            </div>
+                            <div class="info-item">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>${location}</span>
+                            </div>
+                            <div class="info-item">
+                                <i class="fas fa-clock"></i>
+                                <span>${time}</span>
+                            </div>
+                        </div>
+                        <div class="fraction-display">
+                            <div class="fraction-bar">
+                                ${fractionBars}
+                            </div>
+                            <span class="fraction-text">${filled}/${totalSpots} spots filled</span>
+                        </div>
+                        <div class="event-pricing">
+                            <span class="price">€${price}</span>
+                            <span class="price-label">per person</span>
+                        </div>
+                        <button class="btn btn-primary" onclick="joinEvent('${wine.id}')">Join Event</button>
+                    </div>
+                </div>
+            `;
+        }
+
+        function joinEvent(wineId) {
+            const wine = WineDatabase.getWineById(wineId);
+            if (wine) {
+                // Redirect to event detail page with wine ID
+                window.location.href = `event-detail.html?wine=${wineId}`;
+            }
+        }
+    </script>
 </body>
 </html>

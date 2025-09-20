@@ -10,6 +10,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="https://js.stripe.com/v3/"></script>
 </head>
 <body>
     <!-- Navigation -->
@@ -103,12 +106,24 @@
                         <h2>Event Details</h2>
                         <div class="form-row">
                             <div class="form-group">
-                                <label for="event-date">Event Date *</label>
-                                <input type="date" id="event-date" name="event-date" required>
+                                <label for="event-datetime">Event Date & Time *</label>
+                                <input type="text" id="event-datetime" name="event-datetime" placeholder="Select date and time" required readonly>
+                                <i class="fas fa-calendar-alt form-icon"></i>
                             </div>
                             <div class="form-group">
-                                <label for="event-time">Event Time *</label>
-                                <input type="time" id="event-time" name="event-time" required>
+                                <label for="event-duration">Duration</label>
+                                <select id="event-duration" name="event-duration">
+                                    <option value="2">2 hours</option>
+                                    <option value="3" selected>3 hours</option>
+                                    <option value="4">4 hours</option>
+                                    <option value="5">5 hours</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="calendar-preview" id="calendarPreview">
+                            <h3>Event Calendar Preview</h3>
+                            <div class="calendar-widget" id="calendarWidget">
+                                <!-- Calendar will be rendered here -->
                             </div>
                         </div>
                         <div class="form-group">
@@ -205,6 +220,59 @@
                                 I agree to the <a href="#">Terms of Service</a> and <a href="#">Event Host Guidelines</a>
                             </label>
                         </div>
+                    </div>
+
+                    <!-- Payment Processing -->
+                    <div class="form-section">
+                        <h2>Payment & Hosting</h2>
+                        <div class="payment-info">
+                            <div class="payment-method">
+                                <h3>Payment Method</h3>
+                                <div class="payment-options">
+                                    <label class="payment-option">
+                                        <input type="radio" name="payment-method" value="stripe" checked>
+                                        <div class="payment-card">
+                                            <i class="fab fa-cc-stripe"></i>
+                                            <span>Credit/Debit Card (Stripe)</span>
+                                        </div>
+                                    </label>
+                                    <label class="payment-option">
+                                        <input type="radio" name="payment-method" value="paypal">
+                                        <div class="payment-card">
+                                            <i class="fab fa-paypal"></i>
+                                            <span>PayPal</span>
+                                        </div>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="hosting-fee">
+                                <h3>Hosting Fee</h3>
+                                <div class="fee-breakdown">
+                                    <div class="fee-item">
+                                        <span>Platform Fee (5%)</span>
+                                        <span id="platformFee">€0.00</span>
+                                    </div>
+                                    <div class="fee-item">
+                                        <span>Payment Processing (2.9%)</span>
+                                        <span id="processingFee">€0.00</span>
+                                    </div>
+                                    <div class="fee-item total">
+                                        <span>Total Hosting Fee</span>
+                                        <span id="totalFee">€0.00</span>
+                                    </div>
+                                </div>
+                                <p class="fee-note">Hosting fees are deducted from participant payments. You receive the remaining amount after the event.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Stripe Payment Form (Hidden by default) -->
+                    <div class="stripe-payment-form" style="display: none;">
+                        <h4>Payment Details</h4>
+                        <div id="card-element">
+                            <!-- Stripe Elements will create form elements here -->
+                        </div>
+                        <div id="card-errors" role="alert"></div>
                     </div>
 
                     <div class="form-actions">
