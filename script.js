@@ -70,7 +70,7 @@ if (betaForm) {
         
         // Simulate API call
         setTimeout(() => {
-            alert('Welcome to the Social Somm beta! We\'ll notify you when we launch in ' + city + '.');
+            alert('Welcome to the Fractional Fine Wine beta! We\'ll notify you when we launch in ' + city + '.');
             this.reset();
             submitBtn.textContent = originalText;
             submitBtn.disabled = false;
@@ -436,21 +436,21 @@ class AuthManager {
     setCurrentUser(user, remember = false) {
         this.currentUser = user;
         if (remember) {
-            localStorage.setItem('socialSommUser', JSON.stringify(user));
+            localStorage.setItem('fractionalFineWineUser', JSON.stringify(user));
         } else {
-            sessionStorage.setItem('socialSommUser', JSON.stringify(user));
+            sessionStorage.setItem('fractionalFineWineUser', JSON.stringify(user));
         }
     }
 
     getCurrentUser() {
-        const user = localStorage.getItem('socialSommUser') || sessionStorage.getItem('socialSommUser');
+        const user = localStorage.getItem('fractionalFineWineUser') || sessionStorage.getItem('fractionalFineWineUser');
         return user ? JSON.parse(user) : null;
     }
 
     logout() {
         this.currentUser = null;
-        localStorage.removeItem('socialSommUser');
-        sessionStorage.removeItem('socialSommUser');
+        localStorage.removeItem('fractionalFineWineUser');
+        sessionStorage.removeItem('fractionalFineWineUser');
         this.updateUI();
         window.location.href = 'index.html';
     }
