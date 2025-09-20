@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Event - Social Somm</title>
+    <link rel="icon" type="image/png" href="logo1.png">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <img src="logo1.png" alt="Social Somm Logo" class="logo">
+                <h2>Social Somm</h2>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link">Home</a>
+                </li>
+                <li class="nav-separator">|</li>
+                <li class="nav-item">
+                    <a href="index.html#about" class="nav-link">How It Works</a>
+                </li>
+                <li class="nav-separator">|</li>
+                <li class="nav-item">
+                    <a href="events.html" class="nav-link">Events</a>
+                </li>
+                <li class="nav-separator">|</li>
+                <li class="nav-item">
+                    <a href="create-event.html" class="nav-link active">Create Event</a>
+                </li>
+                <li class="nav-separator">|</li>
+                <li class="nav-item">
+                    <a href="profile.html" class="nav-link">Profile</a>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Create Event Header -->
+    <section class="create-event-header">
+        <div class="container">
+            <h1>Create a Wine Event</h1>
+            <p>Share your favorite bottle with fellow wine enthusiasts</p>
+        </div>
+    </section>
+
+    <!-- Create Event Form -->
+    <section class="create-event-form-section">
+        <div class="container">
+            <div class="form-container">
+                <form class="create-event-form">
+                    <!-- Wine Information -->
+                    <div class="form-section">
+                        <h2>Wine Information</h2>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="wine-name">Wine Name *</label>
+                                <input type="text" id="wine-name" name="wine-name" placeholder="e.g., Château Margaux 2015" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="wine-type">Wine Type *</label>
+                                <select id="wine-type" name="wine-type" required>
+                                    <option value="">Select wine type</option>
+                                    <option value="red">Red Wine</option>
+                                    <option value="white">White Wine</option>
+                                    <option value="champagne">Champagne</option>
+                                    <option value="sparkling">Sparkling Wine</option>
+                                    <option value="dessert">Dessert Wine</option>
+                                    <option value="fortified">Fortified Wine</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="wine-region">Region/Country *</label>
+                                <input type="text" id="wine-region" name="wine-region" placeholder="e.g., Bordeaux, France" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="wine-vintage">Vintage Year</label>
+                                <input type="number" id="wine-vintage" name="wine-vintage" placeholder="e.g., 2015" min="1900" max="2024">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="wine-description">Wine Description</label>
+                            <textarea id="wine-description" name="wine-description" placeholder="Tell us about this wine - tasting notes, why you chose it, etc." rows="4"></textarea>
+                        </div>
+                    </div>
+
+                    <!-- Event Details -->
+                    <div class="form-section">
+                        <h2>Event Details</h2>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="event-date">Event Date *</label>
+                                <input type="date" id="event-date" name="event-date" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="event-time">Event Time *</label>
+                                <input type="time" id="event-time" name="event-time" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="event-type">Event Type *</label>
+                            <div class="radio-group">
+                                <label class="radio-label">
+                                    <input type="radio" name="event-type" value="home" required>
+                                    <span class="radio-custom"></span>
+                                    <div class="radio-content">
+                                        <strong>Home Event</strong>
+                                        <p>Hosted at your home or a participant's home</p>
+                                    </div>
+                                </label>
+                                <label class="radio-label">
+                                    <input type="radio" name="event-type" value="away" required>
+                                    <span class="radio-custom"></span>
+                                    <div class="radio-content">
+                                        <strong>Away Event</strong>
+                                        <p>Hosted at a wine bar, restaurant, or venue</p>
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="event-location">Location *</label>
+                            <input type="text" id="event-location" name="event-location" placeholder="e.g., Jordaan, Amsterdam" required>
+                            <small>Exact address will be shared with confirmed participants</small>
+                        </div>
+                    </div>
+
+                    <!-- Pricing & Participants -->
+                    <div class="form-section">
+                        <h2>Pricing & Participants</h2>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="bottle-price">Bottle Price (€) *</label>
+                                <input type="number" id="bottle-price" name="bottle-price" placeholder="e.g., 200" min="50" step="0.01" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="max-participants">Number of Participants *</label>
+                                <select id="max-participants" name="max-participants" required>
+                                    <option value="">Select participants</option>
+                                    <option value="3">3 people (€66.67 each)</option>
+                                    <option value="4">4 people (€50.00 each)</option>
+                                    <option value="5">5 people (€40.00 each)</option>
+                                    <option value="6">6 people (€33.33 each)</option>
+                                    <option value="7">7 people (€28.57 each)</option>
+                                    <option value="8">8 people (€25.00 each)</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="price-preview">
+                            <div class="price-breakdown">
+                                <div class="price-line">
+                                    <span>Bottle price</span>
+                                    <span id="bottle-price-display">€0.00</span>
+                                </div>
+                                <div class="price-line">
+                                    <span>Platform fee (5%)</span>
+                                    <span id="platform-fee-display">€0.00</span>
+                                </div>
+                                <div class="price-line">
+                                    <span>Total cost</span>
+                                    <span id="total-cost-display">€0.00</span>
+                                </div>
+                                <div class="price-line total">
+                                    <span>Cost per person</span>
+                                    <span id="cost-per-person-display">€0.00</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Additional Information -->
+                    <div class="form-section">
+                        <h2>Additional Information</h2>
+                        <div class="form-group">
+                            <label for="event-notes">Event Notes</label>
+                            <textarea id="event-notes" name="event-notes" placeholder="Any special instructions, food pairings, or additional information for participants" rows="3"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="dress-code">Dress Code</label>
+                            <select id="dress-code" name="dress-code">
+                                <option value="">No specific dress code</option>
+                                <option value="casual">Casual</option>
+                                <option value="smart-casual">Smart Casual</option>
+                                <option value="formal">Formal</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="terms" required>
+                                <span class="checkbox-custom"></span>
+                                I agree to the <a href="#">Terms of Service</a> and <a href="#">Event Host Guidelines</a>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="button" class="btn btn-secondary">Save as Draft</button>
+                        <button type="submit" class="btn btn-primary">Create Event</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <img src="logo1.png" alt="Social Somm Logo" class="footer-logo-img">
+                        <h3>Social Somm</h3>
+                    </div>
+                    <p>Your trusted partner in wine discovery and enjoyment.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Platform</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html#about">How It Works</a></li>
+                        <li><a href="events.html">Events</a></li>
+                        <li><a href="create-event.html">Create Event</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Features</h4>
+                    <ul>
+                        <li><a href="#">Create Events</a></li>
+                        <li><a href="#">Discover Events</a></li>
+                        <li><a href="#">Cost Splitting</a></li>
+                        <li><a href="#">Community</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Social Somm. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Price calculation
+        document.getElementById('bottle-price').addEventListener('input', updatePricing);
+        document.getElementById('max-participants').addEventListener('change', updatePricing);
+
+        function updatePricing() {
+            const bottlePrice = parseFloat(document.getElementById('bottle-price').value) || 0;
+            const participants = parseInt(document.getElementById('max-participants').value) || 0;
+            
+            const platformFee = bottlePrice * 0.05;
+            const totalCost = bottlePrice + platformFee;
+            const costPerPerson = participants > 0 ? totalCost / participants : 0;
+
+            document.getElementById('bottle-price-display').textContent = `€${bottlePrice.toFixed(2)}`;
+            document.getElementById('platform-fee-display').textContent = `€${platformFee.toFixed(2)}`;
+            document.getElementById('total-cost-display').textContent = `€${totalCost.toFixed(2)}`;
+            document.getElementById('cost-per-person-display').textContent = `€${costPerPerson.toFixed(2)}`;
+        }
+    </script>
+</body>
+</html>

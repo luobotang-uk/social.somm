@@ -39,6 +39,45 @@ window.addEventListener('scroll', () => {
     }
 });
 
+// Beta waitlist form handling
+const betaForm = document.querySelector('.beta-form');
+if (betaForm) {
+    betaForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        const email = this.querySelector('input[type="email"]').value;
+        const city = this.querySelector('input[type="text"]').value;
+        
+        // Simple validation
+        if (!email || !city) {
+            alert('Please fill in both email and city fields.');
+            return;
+        }
+        
+        // Email validation
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(email)) {
+            alert('Please enter a valid email address.');
+            return;
+        }
+        
+        // Simulate form submission
+        const submitBtn = this.querySelector('button');
+        const originalText = submitBtn.textContent;
+        
+        submitBtn.textContent = 'Joining...';
+        submitBtn.disabled = true;
+        
+        // Simulate API call
+        setTimeout(() => {
+            alert('Welcome to the Social Somm beta! We\'ll notify you when we launch in ' + city + '.');
+            this.reset();
+            submitBtn.textContent = originalText;
+            submitBtn.disabled = false;
+        }, 1500);
+    });
+}
+
 // Contact form handling
 const contactForm = document.querySelector('.contact-form');
 if (contactForm) {
@@ -49,10 +88,11 @@ if (contactForm) {
         const formData = new FormData(this);
         const name = formData.get('name');
         const email = formData.get('email');
+        const inquiry = formData.get('inquiry');
         const message = formData.get('message');
         
         // Simple validation
-        if (!name || !email || !message) {
+        if (!name || !email || !inquiry || !message) {
             alert('Please fill in all fields.');
             return;
         }
@@ -73,7 +113,7 @@ if (contactForm) {
         
         // Simulate API call
         setTimeout(() => {
-            alert('Thank you for your message! We\'ll get back to you soon.');
+            alert('Thank you for your ' + inquiry + ' inquiry! We\'ll get back to you soon.');
             this.reset();
             submitBtn.textContent = originalText;
             submitBtn.disabled = false;
@@ -98,7 +138,7 @@ const observer = new IntersectionObserver((entries) => {
 
 // Observe elements for scroll animations
 document.addEventListener('DOMContentLoaded', () => {
-    const animatedElements = document.querySelectorAll('.service-card, .stat, .about-text, .contact-item');
+    const animatedElements = document.querySelectorAll('.feature-card, .stat, .about-text, .contact-item, .benefit');
     
     animatedElements.forEach(el => {
         el.style.opacity = '0';
@@ -152,11 +192,11 @@ window.addEventListener('load', () => {
     }, 100);
 });
 
-// Add hover effects for service cards
+// Add hover effects for feature cards
 document.addEventListener('DOMContentLoaded', () => {
-    const serviceCards = document.querySelectorAll('.service-card');
+    const featureCards = document.querySelectorAll('.feature-card');
     
-    serviceCards.forEach(card => {
+    featureCards.forEach(card => {
         card.addEventListener('mouseenter', function() {
             this.style.transform = 'translateY(-10px) scale(1.02)';
         });

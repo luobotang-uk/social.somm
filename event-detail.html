@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Château Margaux 2015 - Social Somm</title>
+    <link rel="icon" type="image/png" href="logo1.png">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <img src="logo1.png" alt="Social Somm Logo" class="logo">
+                <h2>Social Somm</h2>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link">Home</a>
+                </li>
+                <li class="nav-separator">|</li>
+                <li class="nav-item">
+                    <a href="index.html#about" class="nav-link">How It Works</a>
+                </li>
+                <li class="nav-separator">|</li>
+                <li class="nav-item">
+                    <a href="events.html" class="nav-link">Events</a>
+                </li>
+                <li class="nav-separator">|</li>
+                <li class="nav-item">
+                    <a href="create-event.html" class="nav-link">Create Event</a>
+                </li>
+                <li class="nav-separator">|</li>
+                <li class="nav-item">
+                    <a href="profile.html" class="nav-link">Profile</a>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Event Detail Header -->
+    <section class="event-detail-header">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="events.html"><i class="fas fa-arrow-left"></i> Back to Events</a>
+            </div>
+            <div class="event-header-content">
+                <div class="wine-info">
+                    <div class="wine-image">
+                        <div class="wine-bottle-large">
+                            <img src="logo1.png" alt="Wine Bottle" class="bottle-logo-large">
+                        </div>
+                        <div class="event-type-badge home">Home Event</div>
+                    </div>
+                    <div class="wine-details">
+                        <h1>Château Margaux 2015</h1>
+                        <p class="wine-region">Bordeaux, France • Red Wine</p>
+                        <div class="wine-rating">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <span>4.8/5 (12 reviews)</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="event-actions">
+                    <div class="price-display">
+                        <span class="price-large">€40</span>
+                        <span class="price-label">per person</span>
+                    </div>
+                    <button class="btn btn-primary btn-large">Join Event</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Event Details -->
+    <section class="event-details">
+        <div class="container">
+            <div class="event-details-grid">
+                <div class="event-info-section">
+                    <h2>Event Information</h2>
+                    <div class="info-grid">
+                        <div class="info-card">
+                            <i class="fas fa-calendar"></i>
+                            <div>
+                                <h4>Date & Time</h4>
+                                <p>December 15, 2024 at 7:00 PM</p>
+                            </div>
+                        </div>
+                        <div class="info-card">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <h4>Location</h4>
+                                <p>Jordaan, Amsterdam, Netherlands</p>
+                                <small>Exact address shared after booking</small>
+                            </div>
+                        </div>
+                        <div class="info-card">
+                            <i class="fas fa-user"></i>
+                            <div>
+                                <h4>Host</h4>
+                                <p>Sarah M.</p>
+                                <small>Wine enthusiast since 2018</small>
+                            </div>
+                        </div>
+                        <div class="info-card">
+                            <i class="fas fa-users"></i>
+                            <div>
+                                <h4>Participants</h4>
+                                <p>3 of 5 spots filled</p>
+                                <small>2 spots remaining</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="fraction-section">
+                    <h2>Bottle Fractions</h2>
+                    <div class="fraction-visual">
+                        <div class="bottle-outline">
+                            <div class="fraction-sections">
+                                <div class="fraction-section filled" data-fraction="1">
+                                    <span class="fraction-label">Sarah M.</span>
+                                </div>
+                                <div class="fraction-section filled" data-fraction="2">
+                                    <span class="fraction-label">Alex K.</span>
+                                </div>
+                                <div class="fraction-section filled" data-fraction="3">
+                                    <span class="fraction-label">Maria L.</span>
+                                </div>
+                                <div class="fraction-section available" data-fraction="4">
+                                    <span class="fraction-label">Available</span>
+                                </div>
+                                <div class="fraction-section available" data-fraction="5">
+                                    <span class="fraction-label">Available</span>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="fraction-description">Each section represents one person's share of the bottle</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Wine Reviews -->
+    <section class="wine-reviews">
+        <div class="container">
+            <h2>Wine Reviews</h2>
+            <div class="reviews-grid">
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="reviewer-info">
+                            <h4>Robert Parker</h4>
+                            <p>Wine Advocate</p>
+                        </div>
+                        <div class="review-rating">
+                            <span>98/100</span>
+                        </div>
+                    </div>
+                    <p class="review-text">"The 2015 Château Margaux is a wine of extraordinary finesse and elegance. The wine shows incredible depth and complexity with layers of black fruit, violets, and subtle oak notes."</p>
+                </div>
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="reviewer-info">
+                            <h4>James Suckling</h4>
+                            <p>Wine Critic</p>
+                        </div>
+                        <div class="review-rating">
+                            <span>97/100</span>
+                        </div>
+                    </div>
+                    <p class="review-text">"A magnificent wine that perfectly captures the essence of Margaux. The 2015 vintage shows exceptional balance and aging potential."</p>
+                </div>
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="reviewer-info">
+                            <h4>Wine Spectator</h4>
+                            <p>Magazine</p>
+                        </div>
+                        <div class="review-rating">
+                            <span>96/100</span>
+                        </div>
+                    </div>
+                    <p class="review-text">"This is a classic Margaux with its signature silky texture and floral aromatics. The wine is approachable now but will continue to evolve beautifully."</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Join Event Form -->
+    <section class="join-event-section">
+        <div class="container">
+            <div class="join-form-container">
+                <h2>Join This Event</h2>
+                <form class="join-event-form">
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="dietary">Dietary Restrictions</label>
+                        <textarea id="dietary" name="dietary" placeholder="Any allergies or dietary requirements?"></textarea>
+                    </div>
+                    <div class="payment-summary">
+                        <div class="payment-line">
+                            <span>Event participation</span>
+                            <span>€40.00</span>
+                        </div>
+                        <div class="payment-line">
+                            <span>Platform fee</span>
+                            <span>€2.00</span>
+                        </div>
+                        <div class="payment-line total">
+                            <span>Total</span>
+                            <span>€42.00</span>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-large">Confirm & Pay</button>
+                    <p class="terms">By joining this event, you agree to our <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a></p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <img src="logo1.png" alt="Social Somm Logo" class="footer-logo-img">
+                        <h3>Social Somm</h3>
+                    </div>
+                    <p>Your trusted partner in wine discovery and enjoyment.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Platform</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html#about">How It Works</a></li>
+                        <li><a href="events.html">Events</a></li>
+                        <li><a href="create-event.html">Create Event</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Features</h4>
+                    <ul>
+                        <li><a href="#">Create Events</a></li>
+                        <li><a href="#">Discover Events</a></li>
+                        <li><a href="#">Cost Splitting</a></li>
+                        <li><a href="#">Community</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Social Somm. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

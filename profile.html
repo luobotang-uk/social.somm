@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Profile - Social Somm</title>
+    <link rel="icon" type="image/png" href="logo1.png">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <img src="logo1.png" alt="Social Somm Logo" class="logo">
+                <h2>Social Somm</h2>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link">Home</a>
+                </li>
+                <li class="nav-separator">|</li>
+                <li class="nav-item">
+                    <a href="index.html#about" class="nav-link">How It Works</a>
+                </li>
+                <li class="nav-separator">|</li>
+                <li class="nav-item">
+                    <a href="events.html" class="nav-link">Events</a>
+                </li>
+                <li class="nav-separator">|</li>
+                <li class="nav-item">
+                    <a href="create-event.html" class="nav-link">Create Event</a>
+                </li>
+                <li class="nav-separator">|</li>
+                <li class="nav-item">
+                    <a href="profile.html" class="nav-link active">Profile</a>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Profile Header -->
+    <section class="profile-header">
+        <div class="container">
+            <div class="profile-info">
+                <div class="profile-avatar">
+                    <div class="avatar-placeholder">👤</div>
+                </div>
+                <div class="profile-details">
+                    <h1>Sarah M.</h1>
+                    <p class="profile-location">Amsterdam, Netherlands</p>
+                    <div class="profile-stats">
+                        <div class="stat">
+                            <span class="stat-number">12</span>
+                            <span class="stat-label">Events Joined</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">3</span>
+                            <span class="stat-label">Events Hosted</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">4.8</span>
+                            <span class="stat-label">Rating</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="profile-actions">
+                    <button class="btn btn-secondary">Edit Profile</button>
+                    <button class="btn btn-primary">Create Event</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Profile Content -->
+    <section class="profile-content">
+        <div class="container">
+            <div class="profile-tabs">
+                <button class="tab-button active" data-tab="upcoming">Upcoming Events</button>
+                <button class="tab-button" data-tab="past">Past Events</button>
+                <button class="tab-button" data-tab="hosted">Hosted Events</button>
+                <button class="tab-button" data-tab="favorites">Favorites</button>
+            </div>
+
+            <!-- Upcoming Events Tab -->
+            <div class="tab-content active" id="upcoming">
+                <h2>Upcoming Events</h2>
+                <div class="events-list">
+                    <div class="event-item">
+                        <div class="event-image">
+                            <div class="wine-icon">
+                                <img src="logo1.png" alt="Wine Bottle" class="bottle-logo-small">
+                            </div>
+                            <div class="event-type home">Home</div>
+                        </div>
+                        <div class="event-details">
+                            <h3>Château Margaux 2015</h3>
+                            <p class="event-meta">Dec 15, 2024 • 7:00 PM • Amsterdam</p>
+                            <div class="event-status">
+                                <span class="status-badge confirmed">Confirmed</span>
+                                <span class="event-price">€40 per person</span>
+                            </div>
+                        </div>
+                        <div class="event-actions">
+                            <button class="btn btn-secondary btn-small">View Details</button>
+                        </div>
+                    </div>
+                    <div class="event-item">
+                        <div class="event-image">
+                            <div class="wine-icon">🥂</div>
+                            <div class="event-type away">Away</div>
+                        </div>
+                        <div class="event-details">
+                            <h3>Dom Pérignon 2013</h3>
+                            <p class="event-meta">Dec 18, 2024 • 8:00 PM • Berlin</p>
+                            <div class="event-status">
+                                <span class="status-badge pending">Pending</span>
+                                <span class="event-price">€75 per person</span>
+                            </div>
+                        </div>
+                        <div class="event-actions">
+                            <button class="btn btn-secondary btn-small">View Details</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Past Events Tab -->
+            <div class="tab-content" id="past">
+                <h2>Past Events</h2>
+                <div class="events-list">
+                    <div class="event-item">
+                        <div class="event-image">
+                            <div class="wine-icon">
+                                <img src="logo1.png" alt="Wine Bottle" class="bottle-logo-small">
+                            </div>
+                            <div class="event-type home">Home</div>
+                        </div>
+                        <div class="event-details">
+                            <h3>Opus One 2018</h3>
+                            <p class="event-meta">Nov 20, 2024 • 7:30 PM • Paris</p>
+                            <div class="event-status">
+                                <span class="status-badge completed">Completed</span>
+                                <span class="event-price">€65 per person</span>
+                            </div>
+                            <div class="event-rating">
+                                <div class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <span>5.0/5</span>
+                            </div>
+                        </div>
+                        <div class="event-actions">
+                            <button class="btn btn-secondary btn-small">View Details</button>
+                        </div>
+                    </div>
+                    <div class="event-item">
+                        <div class="event-image">
+                            <div class="wine-icon">
+                                <img src="logo1.png" alt="Wine Bottle" class="bottle-logo-small">
+                            </div>
+                            <div class="event-type away">Away</div>
+                        </div>
+                        <div class="event-details">
+                            <h3>Barolo Brunate 2016</h3>
+                            <p class="event-meta">Nov 15, 2024 • 6:30 PM • London</p>
+                            <div class="event-status">
+                                <span class="status-badge completed">Completed</span>
+                                <span class="event-price">€35 per person</span>
+                            </div>
+                            <div class="event-rating">
+                                <div class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                </div>
+                                <span>4.0/5</span>
+                            </div>
+                        </div>
+                        <div class="event-actions">
+                            <button class="btn btn-secondary btn-small">View Details</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Hosted Events Tab -->
+            <div class="tab-content" id="hosted">
+                <h2>Hosted Events</h2>
+                <div class="events-list">
+                    <div class="event-item">
+                        <div class="event-image">
+                            <div class="wine-icon">
+                                <img src="logo1.png" alt="Wine Bottle" class="bottle-logo-small">
+                            </div>
+                            <div class="event-type home">Home</div>
+                        </div>
+                        <div class="event-details">
+                            <h3>Château Margaux 2015</h3>
+                            <p class="event-meta">Dec 15, 2024 • 7:00 PM • Amsterdam</p>
+                            <div class="event-status">
+                                <span class="status-badge active">Active</span>
+                                <span class="event-price">3/5 participants</span>
+                            </div>
+                        </div>
+                        <div class="event-actions">
+                            <button class="btn btn-secondary btn-small">Manage Event</button>
+                        </div>
+                    </div>
+                    <div class="event-item">
+                        <div class="event-image">
+                            <div class="wine-icon">🥂</div>
+                            <div class="event-type home">Home</div>
+                        </div>
+                        <div class="event-details">
+                            <h3>Veuve Clicquot 2012</h3>
+                            <p class="event-meta">Nov 10, 2024 • 8:00 PM • Amsterdam</p>
+                            <div class="event-status">
+                                <span class="status-badge completed">Completed</span>
+                                <span class="event-price">4/4 participants</span>
+                            </div>
+                            <div class="event-rating">
+                                <div class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <span>5.0/5 host rating</span>
+                            </div>
+                        </div>
+                        <div class="event-actions">
+                            <button class="btn btn-secondary btn-small">View Details</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Favorites Tab -->
+            <div class="tab-content" id="favorites">
+                <h2>Favorite Wines</h2>
+                <div class="favorites-grid">
+                    <div class="favorite-item">
+                        <div class="wine-icon">🍷</div>
+                        <h3>Château Margaux</h3>
+                        <p>Bordeaux, France</p>
+                        <div class="favorite-actions">
+                            <button class="btn btn-secondary btn-small">Find Events</button>
+                        </div>
+                    </div>
+                    <div class="favorite-item">
+                        <div class="wine-icon">🥂</div>
+                        <h3>Dom Pérignon</h3>
+                        <p>Champagne, France</p>
+                        <div class="favorite-actions">
+                            <button class="btn btn-secondary btn-small">Find Events</button>
+                        </div>
+                    </div>
+                    <div class="favorite-item">
+                        <div class="wine-icon">🍷</div>
+                        <h3>Opus One</h3>
+                        <p>Napa Valley, USA</p>
+                        <div class="favorite-actions">
+                            <button class="btn btn-secondary btn-small">Find Events</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <img src="logo1.png" alt="Social Somm Logo" class="footer-logo-img">
+                        <h3>Social Somm</h3>
+                    </div>
+                    <p>Your trusted partner in wine discovery and enjoyment.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Platform</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html#about">How It Works</a></li>
+                        <li><a href="events.html">Events</a></li>
+                        <li><a href="create-event.html">Create Event</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Features</h4>
+                    <ul>
+                        <li><a href="#">Create Events</a></li>
+                        <li><a href="#">Discover Events</a></li>
+                        <li><a href="#">Cost Splitting</a></li>
+                        <li><a href="#">Community</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Social Somm. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Tab functionality
+        document.querySelectorAll('.tab-button').forEach(button => {
+            button.addEventListener('click', () => {
+                // Remove active class from all buttons and contents
+                document.querySelectorAll('.tab-button').forEach(btn => btn.classList.remove('active'));
+                document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
+                
+                // Add active class to clicked button and corresponding content
+                button.classList.add('active');
+                document.getElementById(button.dataset.tab).classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>
