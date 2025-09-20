@@ -44,10 +44,23 @@ body {
     height: 70px;
 }
 
+.nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.nav-logo .logo {
+    height: 40px;
+    width: auto;
+    object-fit: contain;
+}
+
 .nav-logo h2 {
     color: #8B4513;
     font-weight: 700;
     font-size: 1.5rem;
+    margin: 0;
 }
 
 .nav-menu {
@@ -181,6 +194,20 @@ body {
     justify-content: center;
     align-items: center;
     animation: fadeInRight 1s ease-out;
+}
+
+.hero-logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-logo-img {
+    max-width: 300px;
+    height: auto;
+    object-fit: contain;
+    animation: float 3s ease-in-out infinite;
+    filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.1));
 }
 
 .wine-glass {
@@ -392,9 +419,27 @@ body {
     margin-bottom: 2rem;
 }
 
+.footer-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.footer-logo-img {
+    height: 30px;
+    width: auto;
+    object-fit: contain;
+}
+
 .footer-section h3,
 .footer-section h4 {
     margin-bottom: 1rem;
+    color: #8B4513;
+}
+
+.footer-logo h3 {
+    margin: 0;
     color: #8B4513;
 }
 
@@ -543,6 +588,18 @@ body {
 
     .wine-glass {
         font-size: 5rem;
+    }
+    
+    .hero-logo-img {
+        max-width: 200px;
+    }
+    
+    .nav-logo .logo {
+        height: 30px;
+    }
+    
+    .footer-logo-img {
+        height: 25px;
     }
 }
 
